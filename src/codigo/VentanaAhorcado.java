@@ -28,12 +28,10 @@ public class VentanaAhorcado extends javax.swing.JFrame {
     public VentanaAhorcado() {
         initComponents();
         dibujaImagen(0); //Llamamos dibuja imagen para que alga la imagen
-        
         //Al igualar palabraOculta al string le decimos que cuando llame a la palabra de la lista de palabras las guarde alli.
         palabraOculta = eligePalabraOculta(listaPalabras); //Llamamos a la lista de palabras, una de ellas.
         palabraOculta = palabraOculta.toUpperCase(); //Esto es para que si en la lista hay una palabra en minusculas, las ponga en mayusculas.
         escribeGuinesEnPantalla(); //Para poner los guines que hagan falta
-        System.out.println(palabraOculta);
     }
     
     //Con este metodo se escibre en pantalla el numero de guiones como letras tenga la palabra.
@@ -49,6 +47,7 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         Random aleatorio = new Random();
         return lista [aleatorio.nextInt (lista.length)];
     }
+    
     //Metodo para revisar si la letra presionada esta en la palabra oculta, si no es asi nos devuelve un fallo.
     private void chequeaLetra (String letra) {
         letra = letra.toUpperCase();
@@ -82,6 +81,7 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         }
         
         else {
+            
             //Introducimos el swicht que lo que hace es mejorar los if anidados, queda el codigo mas legible.
             switch (numeroImagen) {
                 case 0: nombreImagen = getClass ().getResource("/imagenes/ahorcado_0.png"); break;
